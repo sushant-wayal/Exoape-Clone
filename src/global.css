@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    font-family: gilroy;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    position: absolute;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    position: fixed;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: gray;
+    opacity: 0.2;
+    border-radius: 4px;
+}
+
+.link-white, .link-black {
+    transition: all 0.3s ease-in 0s;
+}
+
+.link-white:hover, .link-black:hover {
+    transform: translateX(15px);
+}
+
+.link-white::before {
+    content: "";
+    position: absolute;
+    text-align: center;
+    left: -15px;
+    top: 50%;
+    color: black;
+    transform: translateY(-50%) rotate(90deg);
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+    border: 0.5px solid white;
+    transition: all 0.3s ease-in 0s;
+}
+
+.link-white:hover::before {
+    content: "↑";
+    left: -46.5px;
+    background-color: white;
+    height: 40px;
+    width: 40px;
+}
+
+.link-black::before {
+    content: "";
+    position: absolute;
+    text-align: center;
+    left: -15px;
+    top: 50%;
+    color: white;
+    transform: translateY(-50%) rotate(90deg);
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+    border: 0.5px solid black;
+    transition: all 0.3s ease-in 0s;
+}
+
+.link-black:hover::before {
+    content: "↑";
+    left: -46.5px;
+    background-color: black;
+    height: 40px;
+    width: 40px;
+}
+
+.link-white::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    right: 0;
+    height: 1px;
+    width: 100%;
+    background-color: white;
+    transition: width 0.3s ease-in 0s;
+}
+
+.link-white:hover::after {
+    width: 0px;
+}
+
+.link-black::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    right: 0;
+    height: 1px;
+    width: 100%;
+    background-color: black;
+    transition: width 0.3s ease-in 0s;
+}
+
+.link-black:hover::after {
+    width: 0px;
+}
+
+#reelArea {
+    height: 200vh;
+}
+
+.navigate::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    height: 1px;
+    background-color: white;
+    transition: width 0.3s ease-in 0s;
+}
+
+.navigate:hover::after {
+    left: 0;
+    width: 100%;
+}
+
+.navigate:not(:hover)::after {
+    right: 0;
+    width: 0%;
+}
